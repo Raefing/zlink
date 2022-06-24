@@ -1,0 +1,11 @@
+com\zlink\channel\api\IChannelManager.class
+com\zlink\channel\api\IChannelConfig$IServiceConfig.class
+com\zlink\channel\api\IBeforeService.class
+com\zlink\channel\api\IChannelExceptionHandler.class
+com\zlink\channel\api\IFlow.class
+com\zlink\channel\api\ext\ReloadableChannel.class
+com\zlink\channel\api\IChannelConfig.class
+com\zlink\channel\api\IService.class
+com\zlink\channel\api\IChannel.class
+com\zlink\channel\api\ext\Orderable.class
+com\zlink\channel\api\IAfterService.class

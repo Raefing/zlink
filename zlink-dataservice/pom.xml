@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>zlink</artifactId>
+        <groupId>com.zlink</groupId>
+        <version>9.0.0-M1</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>zlink-dataservice</artifactId>
+    <packaging>pom</packaging>
+    <description>数据服务组件，提供系统需要的所有数据相关服务功能，包括数据库、redis、influxDB等不同数据源的支持</description>
+    <modules>
+        <module>zlink-dataservice-druid-starter</module>
+        <module>zlink-dataservice-redis-starter</module>
+    </modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.zlink</groupId>
+                <artifactId>zlink-dataservice-druid-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zlink</groupId>
+                <artifactId>zlink-dataservice-redis-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

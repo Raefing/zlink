@@ -1,0 +1,8 @@
+package com.zlink.ui.user.dto;
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface RoleInfoMapper extends BaseMapper<RoleInfo> {
+}

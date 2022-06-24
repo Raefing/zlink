@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.zlink</groupId>
+    <artifactId>zlink-dependencies</artifactId>
+    <version>9.0.0-M1</version>
+    <packaging>pom</packaging>
+    <name>zlink-dependencies</name>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>branch-snapshots</id>
+            <name>snapshots</name>
+            <url>http://10.7.20.29:9081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <!--<repository>
+            <id>branch-releases</id>
+            <name>releases</name>
+            <url>http://10.7.20.29:9081/nexus/content/groups/public/</url>
+        </repository>-->
+    </distributionManagement>
+    <properties>
+        <!-- 模块版本 -->
+        <base.version>9.0.0-M1</base.version>
+        <channel.version>9.0.0-M1</channel.version>
+        <config.version>9.0.0-M1</config.version>
+        <datapack.version>9.0.0-M1</datapack.version>
+        <dataservice.version>9.0.0-M1</dataservice.version>
+        <event.version>9.0.0-M1</event.version>
+        <pipeline.version>9.0.0-M1</pipeline.version>
+        <probe.version>9.0.0-M1</probe.version>
+        <protocol.version>9.0.0-M1</protocol.version>
+        <runtime.version>9.0.0-M1</runtime.version>
+        <security.version>9.0.0-M1</security.version>
+        <service.version>9.0.0-M1</service.version>
+        <system.version>9.0.0-M1</system.version>
+        <ui.version>9.0.0-M1</ui.version>
+        <cloud.version>9.0.0-M1</cloud.version>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <!-- 基础 -->
+            <dependency>
+                <groupId>com.zlink</groupId>
+                <artifactId>zlink-base</artifactId>
+                <version>${base.version}</version>
+            </dependency>
+            <!-- channel -->
+            <dependency>
+                <groupId>com.zlink</groupId>
+                <artifactId>zlink-channel</artifactId>
+                <type>pom</type>
+                <scope>import</scope>
+                <version>${channel.version}</version>
+            </dependency>
+            <!-- config -->
+            <dependency>
+                <groupId>com.zlink</groupId>
+                <artifactId>zlink-config</artifactId>
+                <type>pom</type>
+                <scope>import</scope>
+                <version>${config.version}</version>
+            </dependency>
+            <!-- datapack -->
+            <dependency>
+                <groupId>com.zlink</groupId>
+                <artifactId>zlink-datapack</artifactId>
+                <type>pom</type>
+                <scope>import</scope>
+                <version>${datapack.version}</version>
+            </dependency>
+            <!-- dataservice -->
+            <dependency>
+                <groupId>com.zlink</groupId>
+                <artifactId>zlink-dataservice</artifactId>
+                <type>pom</type>
+                <scope>import</scope>
+                <version>${dataservice.version}</version>
+            </dependency>
+            <!-- event -->
+            <dependency>
+                <groupId>com.zlink</groupId>
+                <artifactId>zlink-event</artifactId>
+                <type>pom</type>
+                <scope>import</scope>
+                <version>${event.version}</version>
+            </dependency>
+            <!-- pipeline -->
+            <dependency>
+                <groupId>com.zlink</groupId>
+                <artifactId>zlink-pipeline</artifactId>
+                <type>pom</type>
+                <scope>import</scope>
+                <version>${pipeline.version}</version>
+            </dependency>
+            <!-- probe -->
+            <dependency>
+                <groupId>com.zlink</groupId>
+                <artifactId>zlink-probe</artifactId>
+                <type>pom</type>
+                <scope>import</scope>
+                <version>${probe.version}</version>
+            </dependency>
+            <!-- protocol -->
+            <dependency>
+                <groupId>com.zlink</groupId>
+                <artifactId>zlink-protocol</artifactId>
+                <type>pom</type>
+                <scope>import</scope>
+                <version>${protocol.version}</version>
+            </dependency>
+            <!-- runtime -->
+            <dependency>
+                <groupId>com.zlink</groupId>
+                <artifactId>zlink-runtime</artifactId>
+                <type>pom</type>
+                <scope>import</scope>
+                <version>${runtime.version}</version>
+            </dependency>
+            <!-- security -->
+            <dependency>
+                <groupId>com.zlink</groupId>
+                <artifactId>zlink-security</artifactId>
+                <type>pom</type>
+                <scope>import</scope>
+                <version>${service.version}</version>
+            </dependency>
+            <!-- service -->
+            <dependency>
+                <groupId>com.zlink</groupId>
+                <artifactId>zlink-service</artifactId>
+                <type>pom</type>
+                <scope>import</scope>
+                <version>${service.version}</version>
+            </dependency>
+            <!-- system -->
+            <dependency>
+                <groupId>com.zlink</groupId>
+                <artifactId>zlink-system</artifactId>
+                <type>pom</type>
+                <scope>import</scope>
+                <version>${system.version}</version>
+            </dependency>
+            <!-- ui -->
+            <dependency>
+                <groupId>com.zlink</groupId>
+                <artifactId>zlink-ui</artifactId>
+                <type>pom</type>
+                <scope>import</scope>
+                <version>${ui.version}</version>
+            </dependency>
+            <!-- cloud -->
+            <dependency>
+                <groupId>com.zlink.cloud</groupId>
+                <artifactId>zlink-cloud</artifactId>
+                <type>pom</type>
+                <scope>import</scope>
+                <version>${cloud.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

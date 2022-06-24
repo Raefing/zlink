@@ -1,0 +1,28 @@
+server:
+  port: 8801
+  servlet:
+    context-path: /
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://127.0.0.1:3306/layadmin?useUnicode=true&characterEncoding=utf8
+      username: root
+      password: 123456
+  cache:
+    type: redis
+  redis:
+
+  mvc:
+    static-path-pattern: /static/**
+    favicon:
+      enabled: true
+  thymeleaf:
+    #prefix: D://WorkSpace/ZLINK-M1/zlink-ui/zlink-ui-thymeleaf-starter/src/main/resources/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    cache: false
+system:
+  name: 后台管理系统
+  version: 1.0-aphl
+  imgPath: D://WorkSpace/ZLINK-M1/zlink-ui/zlink-ui-thymeleaf-starter/src/main/resources/static/img
