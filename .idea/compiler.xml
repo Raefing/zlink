@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="zlink-channel-starter" />
+        <module name="zlink-mark-client-tcp" />
+        <module name="zlink-config-api" />
+        <module name="zlink-runtime-base" />
+        <module name="zlink-runtime-gw" />
+        <module name="zlink-runtime-branch" />
+        <module name="zlink-mark-client-http" />
+        <module name="zlink-service-base" />
+        <module name="zlink-protocol-api" />
+        <module name="zlink-mark-base" />
+        <module name="zlink-config-dynamic-starter" />
+        <module name="zlink-code-core" />
+        <module name="zlink-mark-client-discovery-starter" />
+        <module name="zlink-event-core" />
+        <module name="zlink-pipeline-starter" />
+        <module name="zlink-pipeline-api" />
+        <module name="zlink-dataservice-redis-starter" />
+        <module name="zlink-dataservice-druid-starter" />
+        <module name="zlink-config-dynamic" />
+        <module name="zlink-cloud-cluster" />
+        <module name="zlink-test" />
+        <module name="zlink-code-base" />
+        <module name="zlink-mark-server" />
+        <module name="zlink-probe-starter" />
+        <module name="zlink-security-api" />
+        <module name="zlink-service-api" />
+        <module name="zlink-config-base" />
+        <module name="zlink-event-starter" />
+        <module name="zlink-protocol-tcp" />
+        <module name="zlink-base" />
+        <module name="zlink-cloud-board" />
+        <module name="zlink-config-starter" />
+        <module name="zlink-channel-base" />
+        <module name="zlink-code-api" />
+        <module name="zlink-protocol-http" />
+        <module name="zlink-config-core" />
+        <module name="zlink-system-api" />
+        <module name="zlink-probe-api" />
+        <module name="zlink-runtime-microservice" />
+        <module name="zlink-pipeline-core" />
+        <module name="zlink-probe-core" />
+        <module name="zlink-security-core" />
+        <module name="zlink-channel-api" />
+        <module name="zlink-protocol-base" />
+        <module name="zlink-ui-thymeleaf-starter" />
+        <module name="zlink-cloud-facade" />
+        <module name="zlink-protocol-starter" />
+        <module name="zlink-service-starter" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8" />
+  </component>
+</project>

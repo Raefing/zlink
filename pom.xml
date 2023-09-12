@@ -23,8 +23,8 @@
         <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring-boot.version>2.1.14.RELEASE</spring-boot.version>
-        <spring-cloud.version>Greenwich.SR6</spring-cloud.version>
+        <spring-boot.version>2.5.6</spring-boot.version>
+        <spring-cloud.version>2020.0.1</spring-cloud.version>
         <gravity.version>3.1.3</gravity.version>
         <!-- 三方版本 -->
         <mybatis.version>2.1.1</mybatis.version>
@@ -35,6 +35,27 @@
         <jfinal.version>4.9.03</jfinal.version>
         <lucene.version>7.4.0</lucene.version>
     </properties>
+    <modules>
+        <module>zlink-base</module>
+        <module>zlink-channel</module>
+        <module>zlink-cloud</module>
+        <module>zlink-code</module>
+        <module>zlink-config</module>
+        <module>zlink-datapack</module>
+        <module>zlink-dataservice</module>
+        <module>zlink-dependencies</module>
+        <module>zlink-event</module>
+        <module>zlink-mark</module>
+        <module>zlink-pipeline</module>
+        <module>zlink-probe</module>
+        <module>zlink-protocol</module>
+        <module>zlink-runtime</module>
+        <module>zlink-security</module>
+        <module>zlink-service</module>
+        <module>zlink-system</module>
+        <module>zlink-test</module>
+        <module>zlink-ui</module>
+    </modules>
     <dependencyManagement>
         <dependencies>
             <dependency>
