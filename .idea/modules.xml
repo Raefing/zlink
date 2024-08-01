@@ -7,12 +7,9 @@
       <module fileurl="file://$PROJECT_DIR$/zlink-channel/zlink-channel-api/zlink-channel-api.iml" filepath="$PROJECT_DIR$/zlink-channel/zlink-channel-api/zlink-channel-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/zlink-channel/zlink-channel-base/zlink-channel-base.iml" filepath="$PROJECT_DIR$/zlink-channel/zlink-channel-base/zlink-channel-base.iml" />
       <module fileurl="file://$PROJECT_DIR$/zlink-channel/zlink-channel-starter/zlink-channel-starter.iml" filepath="$PROJECT_DIR$/zlink-channel/zlink-channel-starter/zlink-channel-starter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/zlink-cloud/zlink-cloud.iml" filepath="$PROJECT_DIR$/zlink-cloud/zlink-cloud.iml" />
       <module fileurl="file://$PROJECT_DIR$/zlink-code/zlink-code.iml" filepath="$PROJECT_DIR$/zlink-code/zlink-code.iml" />
       <module fileurl="file://$PROJECT_DIR$/zlink-config/zlink-config.iml" filepath="$PROJECT_DIR$/zlink-config/zlink-config.iml" />
-      <module fileurl="file://$PROJECT_DIR$/zlink-config/zlink-config-dynamic-starter/zlink-config-dynamic-starter.iml" filepath="$PROJECT_DIR$/zlink-config/zlink-config-dynamic-starter/zlink-config-dynamic-starter.iml" />
       <module fileurl="file://$PROJECT_DIR$/zlink-config/zlink-config-starter/zlink-config-starter.iml" filepath="$PROJECT_DIR$/zlink-config/zlink-config-starter/zlink-config-starter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/zlink-datapack/zlink-datapack.iml" filepath="$PROJECT_DIR$/zlink-datapack/zlink-datapack.iml" />
       <module fileurl="file://$PROJECT_DIR$/zlink-dataservice/zlink-dataservice.iml" filepath="$PROJECT_DIR$/zlink-dataservice/zlink-dataservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/zlink-dataservice/zlink-dataservice-druid-starter/zlink-dataservice-druid-starter.iml" filepath="$PROJECT_DIR$/zlink-dataservice/zlink-dataservice-druid-starter/zlink-dataservice-druid-starter.iml" />
       <module fileurl="file://$PROJECT_DIR$/zlink-dataservice/zlink-dataservice-redis-starter/zlink-dataservice-redis-starter.iml" filepath="$PROJECT_DIR$/zlink-dataservice/zlink-dataservice-redis-starter/zlink-dataservice-redis-starter.iml" />
@@ -20,6 +17,7 @@
       <module fileurl="file://$PROJECT_DIR$/zlink-event/zlink-event.iml" filepath="$PROJECT_DIR$/zlink-event/zlink-event.iml" />
       <module fileurl="file://$PROJECT_DIR$/zlink-event/zlink-event-core/zlink-event-core.iml" filepath="$PROJECT_DIR$/zlink-event/zlink-event-core/zlink-event-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/zlink-event/zlink-event-starter/zlink-event-starter.iml" filepath="$PROJECT_DIR$/zlink-event/zlink-event-starter/zlink-event-starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zlink-mapping/zlink-mapping.iml" filepath="$PROJECT_DIR$/zlink-mapping/zlink-mapping.iml" />
       <module fileurl="file://$PROJECT_DIR$/zlink-mark/zlink-mark.iml" filepath="$PROJECT_DIR$/zlink-mark/zlink-mark.iml" />
       <module fileurl="file://$PROJECT_DIR$/zlink-mark/zlink-mark-client/zlink-mark-client.iml" filepath="$PROJECT_DIR$/zlink-mark/zlink-mark-client/zlink-mark-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/zlink-pipeline/zlink-pipeline.iml" filepath="$PROJECT_DIR$/zlink-pipeline/zlink-pipeline.iml" />

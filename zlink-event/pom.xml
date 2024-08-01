@@ -5,7 +5,7 @@
     <parent>
         <artifactId>zlink</artifactId>
         <groupId>com.zlink</groupId>
-        <version>9.0.0-M1</version>
+        <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>zlink-event</artifactId>
@@ -21,6 +21,7 @@
     <modules>
         <module>zlink-event-core</module>
         <module>zlink-event-starter</module>
+        <module>zlink-event-api</module>
     </modules>
     <dependencyManagement>
         <dependencies>

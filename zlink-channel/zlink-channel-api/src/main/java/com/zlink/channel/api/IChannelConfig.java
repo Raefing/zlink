@@ -8,16 +8,16 @@ public interface IChannelConfig {
 
     String getDesc();
 
-    List<IServiceConfig> beforeConfig();
+    List<IServiceConfig> getBeforeConfig();
 
-    List<IServiceConfig> afterConfig();
+    List<IServiceConfig> getAfterConfig();
 
-    List<IServiceConfig> serviceConfig();
+    List<IServiceConfig> getServiceConfig();
 
     String getExceptionHandler();
 
     interface IServiceConfig {
-        String getService();
+        String getServiceId();
 
         int getOrder();
     }

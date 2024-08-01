@@ -1,5 +1,8 @@
 package com.zlink.pipeline.api;
 
-interface IPipelineInitializer {
+public interface IPipelineInitializer {
+
+    Class<?> supported();
+
     void initPipeline(IPipeline pipeline);
 }

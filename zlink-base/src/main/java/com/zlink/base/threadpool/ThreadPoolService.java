@@ -1,10 +1,10 @@
 package com.zlink.base.threadpool;
 
 import com.zlink.base.AbstractManager;
-import com.zlink.base.service.CloseableService;
-import com.zlink.base.service.ReloadableService;
 import com.zlink.base.report.ReportData;
 import com.zlink.base.report.ReportType;
+import com.zlink.base.service.CloseableService;
+import com.zlink.base.service.ReloadableService;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,9 +13,9 @@ import java.util.Map;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class ThreadPoolService extends AbstractManager<ThreadPoolConfig> implements CloseableService , ReloadableService<ThreadPoolConfig> {
+public class ThreadPoolService extends AbstractManager<ThreadPoolConfig> implements CloseableService, ReloadableService<ThreadPoolConfig> {
 
-    private Map<String, ThreadPoolExecutor> executorServiceMap = new HashMap<>();
+    private final Map<String, ThreadPoolExecutor> executorServiceMap = new HashMap<>();
 
     public ThreadPoolService() {
         super(null);
@@ -32,8 +32,8 @@ public class ThreadPoolService extends AbstractManager<ThreadPoolConfig> impleme
             });
         } else {
             ThreadFactory threadFactory = new ThreadFactory() {
-                private String prefix = target.getName() + "-";
-                private AtomicInteger atomicInteger = new AtomicInteger();
+                private final String prefix = target.getName() + "-";
+                private final AtomicInteger atomicInteger = new AtomicInteger();
 
                 @Override
                 public Thread newThread(Runnable r) {
@@ -48,9 +48,7 @@ public class ThreadPoolService extends AbstractManager<ThreadPoolConfig> impleme
                 threadPoolExecutor = new ThreadPoolExecutor(target.getCore(), target.getMax(), target.getIdle(), TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>(), threadFactory);
             }
         }
-        if (threadPoolExecutor != null) {
-            executorServiceMap.put(target.getName(), threadPoolExecutor);
-        }
+        executorServiceMap.put(target.getName(), threadPoolExecutor);
     }
 
     @Override
@@ -93,10 +91,10 @@ public class ThreadPoolService extends AbstractManager<ThreadPoolConfig> impleme
         List<ReportData> reportDataList = new ArrayList<>();
         executorServiceMap.forEach((k, v) -> {
             ReportData data = ReportData.build(ReportType.THREAD_POOL);
-            data.addData("id", k);
-            data.addData("active", v.getActiveCount());
-            data.addData("core", v.getCorePoolSize());
-            data.addData("max", v.getMaximumPoolSize());
+            data.addData("id", k)
+                    .addData("active", v.getActiveCount())
+                    .addData("core", v.getCorePoolSize())
+                    .addData("max", v.getMaximumPoolSize());
             reportDataList.add(data);
         });
         return reportDataList;

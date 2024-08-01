@@ -13,7 +13,7 @@ public class BaseAutoConfiguration {
     @Bean
     public ThreadPoolService threadPoolManager(List<ThreadPoolConfig> configList) {
         ThreadPoolService threadPoolService = new ThreadPoolService();
-        configList.forEach(c -> threadPoolService.load(c));
+        configList.forEach(threadPoolService::load);
         return threadPoolService;
     }
 }

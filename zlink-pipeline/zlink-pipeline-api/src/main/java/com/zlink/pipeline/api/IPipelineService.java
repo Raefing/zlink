@@ -2,10 +2,10 @@ package com.zlink.pipeline.api;
 
 import java.util.concurrent.ScheduledExecutorService;
 
-public interface IPipelineService<T,S> {
-    IPipelineService pipelineInitializer(Class clazz, PipelineInitializer pipelineInitializer);
+public interface IPipelineService<T, S> {
+    void pipelineInitializer(Class<?> clazz, IPipelineInitializer pipelineInitializer);
 
-    IPipelineService group(ScheduledExecutorService executor);
+    void group(ScheduledExecutorService executor);
 
     void stream(T obj);
 

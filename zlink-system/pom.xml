@@ -5,7 +5,7 @@
     <parent>
         <artifactId>zlink</artifactId>
         <groupId>com.zlink</groupId>
-        <version>9.0.0-M1</version>
+        <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>zlink-system</artifactId>
@@ -13,6 +13,8 @@
     <description>系统定义，针对不同后端系统，提供可配置的系统处理逻辑</description>
     <modules>
         <module>zlink-system-api</module>
+        <module>zlink-system-core</module>
+        <module>zlink-system-starter</module>
     </modules>
     <dependencyManagement>
         <dependencies>

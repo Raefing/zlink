@@ -1,8 +1,8 @@
 package com.zlink.pipeline.core;
 
 import com.zlink.pipeline.api.IPipelineCallback;
+import com.zlink.pipeline.api.IPipelineInitializer;
 import com.zlink.pipeline.api.IPipelineService;
-import com.zlink.pipeline.api.PipelineInitializer;
 import com.zlink.pipeline.api.exception.NullOfInitializerException;
 import lombok.extern.slf4j.Slf4j;
 
@@ -11,48 +11,46 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledExecutorService;
 
 @Slf4j
-public class PipelineService implements IPipelineService {
+public class PipelineService<T, S> implements IPipelineService<T, S> {
     private ScheduledExecutorService executor;
-    private Map<Class, PipelineInitializer> initializerMap = new ConcurrentHashMap<>();
+    private final Map<Class<?>, IPipelineInitializer> initializerMap = new ConcurrentHashMap<>();
 
     @Override
-    public IPipelineService pipelineInitializer(Class c, PipelineInitializer pipelineInitializer) {
+    public void pipelineInitializer(Class<?> c, IPipelineInitializer pipelineInitializer) {
         initializerMap.put(c, pipelineInitializer);
-        return this;
     }
 
     @Override
-    public IPipelineService group(ScheduledExecutorService executor) {
+    public void group(ScheduledExecutorService executor) {
         this.executor = executor;
-        return this;
     }
 
     @Override
-    public void stream(Object obj) {
+    public void stream(T obj) {
         stream(obj, null);
     }
 
     @Override
-    public void stream(Object obj, IPipelineCallback callback) {
+    public void stream(T obj, IPipelineCallback<S> callback) {
         innerStream(obj, callback);
     }
 
 
     @Override
-    public void asyncStream(Object obj) {
+    public void asyncStream(T obj) {
         asyncStream(obj, null);
     }
 
     @Override
-    public void asyncStream(Object obj, IPipelineCallback callback) {
+    public void asyncStream(T obj, IPipelineCallback<S> callback) {
         executor.execute(() -> {
             innerStream(obj, callback);
         });
     }
 
-    private void innerStream(Object obj, IPipelineCallback callback) {
-        Class clazz = getClass(obj);
-        PipelineInitializer initializer = initializerMap.get(clazz);
+    private void innerStream(T obj, IPipelineCallback<S> callback) {
+        Class<?> clazz = getClass(obj);
+        IPipelineInitializer initializer = initializerMap.get(clazz);
         if (initializer != null) {
             DefaultPipeline defaultPipeline = new DefaultPipeline();
             initializer.initPipeline(defaultPipeline);
@@ -62,8 +60,8 @@ public class PipelineService implements IPipelineService {
         }
     }
 
-    private Class getClass(Object obj) {
-        Class clazz = obj.getClass();
+    private Class<?> getClass(T obj) {
+        Class<?> clazz = obj.getClass();
         while (!initializerMap.containsKey(clazz)) {
             clazz = clazz.getSuperclass();
             if (clazz.equals(Object.class)) {

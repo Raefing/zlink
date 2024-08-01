@@ -3,6 +3,7 @@ package com.zlink.pipeline.configuration;
 import com.zlink.base.ZlinkContents;
 import com.zlink.base.threadpool.ThreadPoolConfig;
 import com.zlink.base.threadpool.ThreadPoolService;
+import com.zlink.pipeline.api.IPipelineInitializer;
 import com.zlink.pipeline.api.IPipelineService;
 import com.zlink.pipeline.core.PipelineService;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -11,6 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 
+import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 
 @Configuration
@@ -30,11 +32,14 @@ public class PipelineAutoConfiguration {
     @Lazy
     @Bean
     @ConditionalOnMissingBean
-    public IPipelineService pipelineService(ThreadPoolService threadPoolService) {
+    public IPipelineService pipelineService(ThreadPoolService threadPoolService, List<IPipelineInitializer> pipelineInitializers) {
         IPipelineService pipelineService = new PipelineService();
         ScheduledExecutorService service = threadPoolService.getScheduledExecutorService(ZlinkContents.THREAD_POOL.PIPELINE);
         if (service != null) {
             pipelineService.group(service);
+        }
+        for (IPipelineInitializer initializer : pipelineInitializers) {
+            pipelineService.pipelineInitializer(initializer.supported(), initializer);
         }
         return pipelineService;
     }

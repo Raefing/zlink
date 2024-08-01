@@ -11,7 +11,9 @@ import com.zlink.protocol.api.ext.ReloadableProtocol;
 import com.zlink.protocol.exception.ProtocolException;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
@@ -69,7 +71,7 @@ public class ProtocolManager extends AbstractManager<IProtocolConfig> implements
         List<IProtocolServer> servers = getServerAll();
         servers.forEach(server -> {
             try {
-                server.setMessageHandler(getHandler(server.getId(),server.getType()));
+                server.setMessageHandler(getHandler(server.getId(), server.getType()));
                 server.start();
             } catch (ProtocolException e) {
                 log.error("启动接入协议[{}]发生异常", server.getId(), e);
@@ -126,17 +128,10 @@ public class ProtocolManager extends AbstractManager<IProtocolConfig> implements
 
     @Override
     public void registerHandler(String id, IMessageHandler handler) {
-        if (id.indexOf("|") != -1) {
-            String[] ids = id.split("\\|");
-            Arrays.stream(ids).forEach(i -> {
-                handlers.put(i, handler);
-            });
-        } else {
-            handlers.put(id, handler);
-        }
+        handlers.put(id, handler);
     }
 
-    private IMessageHandler getHandler(String key,String type) {
+    private IMessageHandler getHandler(String key, String type) {
         if (!handlers.containsKey(key)) {
             key = "*";
         }

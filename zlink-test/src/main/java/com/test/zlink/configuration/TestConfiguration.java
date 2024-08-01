@@ -5,20 +5,19 @@ import com.zlink.channel.base.ChannelConfig;
 import com.zlink.channel.base.ChannelContext;
 import com.zlink.pipeline.api.IPipelineService;
 import com.zlink.protocol.api.IProtocolManager;
-import com.zlink.protocol.api.ext.IMessageHandler;
 import com.zlink.protocol.base.ProtocolAction;
 import com.zlink.protocol.base.ProtocolPolicy;
 import com.zlink.protocol.tcp.TCPProtocolConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import javax.annotation.PostConstruct;
-
 @Slf4j
 @Configuration
-public class TestConfiguration {
+public class TestConfiguration implements ApplicationRunner {
 
     @Autowired
     private IProtocolManager iProtocolManager;
@@ -26,8 +25,9 @@ public class TestConfiguration {
     private IChannelManager iChannelManager;
     @Autowired
     private IPipelineService pipelineService;
-    //@PostConstruct
-    public void doInit() {
+
+    @Override
+    public void run(ApplicationArguments args) throws Exception {
         iProtocolManager.load(TCPProtocolConfig.builder()
                 .tcpServer("TS", "TS")
                 .action(ProtocolAction.LONG)
@@ -48,8 +48,6 @@ public class TestConfiguration {
         channelConfig.setExceptionHandler("exceptionHandler");
         iChannelManager.load(channelConfig);
         iChannelManager.start();
-
-
     }
 
     @Bean
@@ -64,7 +62,7 @@ public class TestConfiguration {
 
             @Override
             public String getId() {
-                return config.getService();
+                return config.getServiceId();
             }
 
             @Override
@@ -77,6 +75,7 @@ public class TestConfiguration {
         };
     }
 
+
     @Bean
     public IChannelExceptionHandler<ChannelContext<byte[]>> exceptionHandler() {
         return (obj, throwable) -> {
@@ -84,4 +83,6 @@ public class TestConfiguration {
             return obj;
         };
     }
+
+
 }

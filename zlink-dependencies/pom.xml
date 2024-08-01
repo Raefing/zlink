@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.zlink</groupId>
     <artifactId>zlink-dependencies</artifactId>
-    <version>9.0.0-M1</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
     <name>zlink-dependencies</name>
     <distributionManagement>
@@ -21,21 +21,21 @@
     </distributionManagement>
     <properties>
         <!-- 模块版本 -->
-        <base.version>9.0.0-M1</base.version>
-        <channel.version>9.0.0-M1</channel.version>
-        <config.version>9.0.0-M1</config.version>
-        <datapack.version>9.0.0-M1</datapack.version>
-        <dataservice.version>9.0.0-M1</dataservice.version>
-        <event.version>9.0.0-M1</event.version>
-        <pipeline.version>9.0.0-M1</pipeline.version>
-        <probe.version>9.0.0-M1</probe.version>
-        <protocol.version>9.0.0-M1</protocol.version>
-        <runtime.version>9.0.0-M1</runtime.version>
-        <security.version>9.0.0-M1</security.version>
-        <service.version>9.0.0-M1</service.version>
-        <system.version>9.0.0-M1</system.version>
-        <ui.version>9.0.0-M1</ui.version>
-        <cloud.version>9.0.0-M1</cloud.version>
+        <base.version>1.0.0</base.version>
+        <channel.version>1.0.0</channel.version>
+        <config.version>1.0.0</config.version>
+        <mapping.version>1.0.0</mapping.version>
+        <dataservice.version>1.0.0</dataservice.version>
+        <event.version>1.0.0</event.version>
+        <pipeline.version>1.0.0</pipeline.version>
+        <probe.version>1.0.0</probe.version>
+        <protocol.version>1.0.0</protocol.version>
+        <runtime.version>1.0.0</runtime.version>
+        <security.version>1.0.0</security.version>
+        <service.version>1.0.0</service.version>
+        <system.version>1.0.0</system.version>
+        <ui.version>1.0.0</ui.version>
+        <cloud.version>1.0.0</cloud.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -61,13 +61,13 @@
                 <scope>import</scope>
                 <version>${config.version}</version>
             </dependency>
-            <!-- datapack -->
+            <!-- mapping -->
             <dependency>
                 <groupId>com.zlink</groupId>
-                <artifactId>zlink-datapack</artifactId>
+                <artifactId>zlink-mapping</artifactId>
                 <type>pom</type>
                 <scope>import</scope>
-                <version>${datapack.version}</version>
+                <version>${mapping.version}</version>
             </dependency>
             <!-- dataservice -->
             <dependency>
@@ -148,14 +148,6 @@
                 <type>pom</type>
                 <scope>import</scope>
                 <version>${ui.version}</version>
-            </dependency>
-            <!-- cloud -->
-            <dependency>
-                <groupId>com.zlink.cloud</groupId>
-                <artifactId>zlink-cloud</artifactId>
-                <type>pom</type>
-                <scope>import</scope>
-                <version>${cloud.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

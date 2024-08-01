@@ -30,8 +30,7 @@ public class EventAutoConfiguration {
     @Bean(initMethod = "start")
     public IEventService eventService(ThreadPoolService threadPoolService) {
         ScheduledExecutorService executorService = threadPoolService.getScheduledExecutorService(ZlinkContents.THREAD_POOL.EVENT);
-        EventService eventService = new EventService(executorService, queueSize);
-        return eventService;
+        return new EventService(executorService, queueSize);
     }
 
 }

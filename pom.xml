@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.zlink</groupId>
     <artifactId>zlink</artifactId>
-    <version>9.0.0-M1</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
     <name>ZLink</name>
     <distributionManagement>
@@ -38,10 +38,9 @@
     <modules>
         <module>zlink-base</module>
         <module>zlink-channel</module>
-        <module>zlink-cloud</module>
         <module>zlink-code</module>
         <module>zlink-config</module>
-        <module>zlink-datapack</module>
+        <module>zlink-mapping</module>
         <module>zlink-dataservice</module>
         <module>zlink-dependencies</module>
         <module>zlink-event</module>

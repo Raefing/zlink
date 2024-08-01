@@ -5,7 +5,7 @@
     <parent>
         <artifactId>zlink</artifactId>
         <groupId>com.zlink</groupId>
-        <version>9.0.0-M1</version>
+        <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
@@ -21,12 +21,12 @@
             <dependency>
                 <groupId>com.zlink</groupId>
                 <artifactId>zlink-base</artifactId>
-                <version>9.0.0-M1</version>
+                <version>1.0.0</version>
             </dependency>
             <dependency>
                 <groupId>com.zlink</groupId>
                 <artifactId>zlink-autoconfigure</artifactId>
-                <version>9.0.0-M1</version>
+                <version>1.0.0</version>
             </dependency>
             <dependency>
                 <groupId>com.zlink</groupId>

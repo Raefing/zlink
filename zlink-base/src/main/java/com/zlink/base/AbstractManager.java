@@ -5,13 +5,21 @@ import lombok.Getter;
 import lombok.Setter;
 
 public abstract class AbstractManager<T> implements IManager<T>, ProbePointLeader {
-    private IBeanFactory beanFactory;
-    @Setter
-    @Getter
+    private final IBeanFactory beanFactory;
     private int status;
 
     public AbstractManager(IBeanFactory beanFactory) {
         this.beanFactory = beanFactory;
+    }
+
+    @Override
+    public int getStatus() {
+        return status;
+    }
+
+    @Override
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     public Object getBean(String name) {

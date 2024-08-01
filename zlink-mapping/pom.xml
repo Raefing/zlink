@@ -5,10 +5,14 @@
     <parent>
         <artifactId>zlink</artifactId>
         <groupId>com.zlink</groupId>
-        <version>9.0.0-M1</version>
+        <version>1.0.0</version>
     </parent>
+    <modules>
+        <module>zlink-mapping-api</module>
+        <module>zlink-mapping-base</module>
+    </modules>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>zlink-datapack</artifactId>
+    <artifactId>zlink-mapping</artifactId>
     <packaging>pom</packaging>
     <description>报文拆组包，提供各种报文的拆组功能，项目根据具体的业务情况选择合适的拆组包组件</description>
     <dependencyManagement>

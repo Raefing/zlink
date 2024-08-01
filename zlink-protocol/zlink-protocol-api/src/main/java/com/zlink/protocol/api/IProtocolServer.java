@@ -10,7 +10,7 @@ public interface IProtocolServer<T> extends IProtocol {
 
     T onMessage(T message);
 
-    void setMessageHandler(IMessageHandler handler);
+    void setMessageHandler(IMessageHandler<T> handler);
 
     /**
      * 发送

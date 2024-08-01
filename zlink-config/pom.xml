@@ -5,7 +5,7 @@
     <parent>
         <artifactId>zlink</artifactId>
         <groupId>com.zlink</groupId>
-        <version>9.0.0-M1</version>
+        <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>zlink-config</artifactId>
@@ -16,7 +16,6 @@
         <module>zlink-config-base</module>
         <module>zlink-config-core</module>
         <module>zlink-config-dynamic</module>
-        <module>zlink-config-dynamic-starter</module>
         <module>zlink-config-starter</module>
     </modules>
     <dependencyManagement>
