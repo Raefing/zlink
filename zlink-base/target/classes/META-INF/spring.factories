@@ -1,3 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.zlink.base.configuration.BaseAutoConfiguration,\
-  com.zlink.base.configuration.BeanFactoryAutoConfiguration
