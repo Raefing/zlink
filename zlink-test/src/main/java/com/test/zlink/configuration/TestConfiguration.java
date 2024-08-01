@@ -3,6 +3,7 @@ package com.test.zlink.configuration;
 import com.zlink.channel.api.*;
 import com.zlink.channel.base.ChannelConfig;
 import com.zlink.channel.base.ChannelContext;
+import com.zlink.pipeline.api.IPipelineService;
 import com.zlink.protocol.api.IProtocolManager;
 import com.zlink.protocol.api.ext.IMessageHandler;
 import com.zlink.protocol.base.ProtocolAction;
@@ -18,18 +19,20 @@ import javax.annotation.PostConstruct;
 @Slf4j
 @Configuration
 public class TestConfiguration {
+
     @Autowired
     private IProtocolManager iProtocolManager;
     @Autowired
     private IChannelManager iChannelManager;
-
-    @PostConstruct
+    @Autowired
+    private IPipelineService pipelineService;
+    //@PostConstruct
     public void doInit() {
         iProtocolManager.load(TCPProtocolConfig.builder()
                 .tcpServer("TS", "TS")
                 .action(ProtocolAction.LONG)
                 .bindPort(10011)
-                .policy(ProtocolPolicy.LENGTH(0, 8))
+                .policy(ProtocolPolicy.LENGTH(0, 7))
                 .encoding("GBK")
                 .build());
         iProtocolManager.registerHandler("*", (id, request) -> {
@@ -45,6 +48,8 @@ public class TestConfiguration {
         channelConfig.setExceptionHandler("exceptionHandler");
         iChannelManager.load(channelConfig);
         iChannelManager.start();
+
+
     }
 
     @Bean

@@ -22,11 +22,7 @@ public class UIConfiguration implements WebMvcConfigurer {
                         "/user/login.html",
                         "/user/register",
                         "/user/register.html",
-                        "/**/*.css",
-                        "/**/*.js",
-                        "/**/*.icon",
-                        "/**/*.jpg",
-                        "/**/*.png"
+                        "/static/**/*"
                 );//排除
     }
 

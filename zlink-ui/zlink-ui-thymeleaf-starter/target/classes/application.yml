@@ -10,12 +10,10 @@ spring:
       password: 123456
   cache:
     type: redis
-  redis:
-
   mvc:
     static-path-pattern: /static/**
-    favicon:
-      enabled: true
+    pathmatch:
+      matching-strategy: ant_path_matcher
   thymeleaf:
     #prefix: D://WorkSpace/ZLINK-M1/zlink-ui/zlink-ui-thymeleaf-starter/src/main/resources/templates/
     suffix: .html
